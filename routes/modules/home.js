@@ -42,5 +42,18 @@ router.get('/search', (req, res) => {
     .catch(error => console.log(error))
 
 })
+
+router.get("/sort/:type/:commit", (req, res) => {
+  const sortType = req.params.type;
+  const sortCommit = req.params.commit;
+
+  Restaurant.find()
+    .lean()
+    .sort({ name: `${sortCommit}` })
+    .then((restaurants) => {
+      res.render("index", { restaurants });
+    })
+    .catch((error) => console.log(error));
+});
 // 匯出路由模組
 module.exports = router

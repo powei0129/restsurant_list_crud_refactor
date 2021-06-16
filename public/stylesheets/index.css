@@ -1,7 +1,9 @@
-
+.input-group {
+  width:80%;
+}
 
 .search-bar .search-bar-outer {
-  margin: 0 auto;
+  margin: 0;
   max-width: 680px;
   background-color: #fce2cf;
   border-radius: 8px;
